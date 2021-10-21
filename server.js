@@ -46,6 +46,8 @@ const server = new ApolloServer({
     console.log(err)
     return err
   },
+	playground: true,
+  introspection: true,
 })
 
 const installHandler = (app) => {
@@ -69,7 +71,8 @@ const startApolloServer = async () => {
   app.use(express.static('public'))
 
   installHandler(app)
-  app.listen(3000, () => {
+	const port = process.env.PORT || 3000
+  app.listen(port, () => {
     console.log('App started on port 3000')
   })
 }

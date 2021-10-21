@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+	"engines": {
+		"node": "15.x",
+		"npm": "7.x"
+  },
   "scripts": {
     "start": "nodemon -e js,graphql -w . -w .env server.js",
     "compile": "babel src --out-dir public",
